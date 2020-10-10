@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/gps_info"
+        android:padding="20dp">
+        <TextView
+            android:id="@+id/gps_location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOKALIZACJA"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"/>
+
+
+        <ImageView
+            android:id="@+id/direction_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/control_panel"
+        android:layout_below="@id/gps_info">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Type here:"/>
+
+        <LinearLayout
+            android:id="@+id/location_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/latitude_entry"
+                android:hint="enter latitude"
+                android:maxLength="5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:layout_below="@id/label"
+                android:layout_weight="1"
+                android:gravity="center" />
+            <EditText
+                android:id="@+id/longitude_entry"
+                android:hint="enter longitude"
+                android:maxLength="5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:layout_below="@id/label"
+                android:layout_weight="1"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/add_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/control_panel"
+        android:text="add location"
+        android:onClick="addLocation"/>
+
+    <LinearLayout
+        android:id="@+id/entered_locations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/add_location"
+        android:orientation="vertical">
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
